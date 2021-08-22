@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="FLOW" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%level] %d{HH:mm:ss:SSS} - %msg - %l%n"/>
+        </Console>
+
+        <File name="PetstoreTest" fileName="logs/petstore_${date:yyyy-MM-dd}.log" append = "true">
+            <PatternLayout pattern="[%level] %d{HH:mm:ss:SSS} - %msg - {%c}%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="FLOW"/>
+            <AppenderRef ref="PetstoreTest"/>
+        </Root>
+    </Loggers>
+</Configuration>
